@@ -55,12 +55,9 @@ math_fun_op "abs"|"exp"|"log"|"sqrt"|"pow"|"round"|"floor"|"ceil"
 
 "code begins"   {return(CODE_BEGIN);}
 "code ends"     {return(CODE_END);}
-"var"			{return(VAR);}
 "if"			{return(IF);}
-"then"			{return(THEN);}
 "else"			{return(ELSE);}
 "while"			{return(WHILE);}
-"do"			{return(DO);}
 "read"			{return(READ);}
 "print"			{return(PRINT);}
 "Function"  	{return(FUNCTION);}
