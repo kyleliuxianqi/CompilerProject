@@ -17,10 +17,9 @@ void yyerror(char *s){
 %token COLON COMMA OPEN_PAREN CLOSE_PAREN
 %token ASSIGN_OP EQ_OP LT_OP GT_OP LE_OP GE_OP NE_OP AND_OP OR_OP NOT_OP
 %token PLUS_OP MINUS_OP MUL_OP DIV_OP MOD_OP MATH_FUN_OP
-%token CODE_BEGIN CODE_END
-%token VAR 
-%token IF THEN ELSE
-%token WHILE DO 
+%token CODE_BEGIN CODE_END 
+%token IF ELSE
+%token WHILE 
 %token READ PRINT
 %token FUNCTION FUNCTION_END
 %token VOID RETURN
@@ -54,6 +53,8 @@ stmt:
     | stmt_while
     | stmt_io
     | RETURN vals
+	| RETURN func_math
+	| RETURN func_call
     ;
 
 stmt_declare: 
@@ -63,7 +64,7 @@ stmt_declare:
 
 stmt_if:
     IF OPEN_PAREN expression_boolean CLOSE_PAREN stmts
-    | IF OPEN_PAREN expression_boolean CLOSE_PAREN ELSE stmts
+    | IF OPEN_PAREN expression_boolean CLOSE_PAREN stmts ELSE stmts
     ;
 
 stmt_while:
