@@ -52,9 +52,7 @@ stmt:
     | stmt_if
     | stmt_while
     | stmt_io
-    | RETURN vals
-	| RETURN func_math
-	| RETURN func_call
+    | RETURN val_cal
     ;
 
 stmt_declare: 
